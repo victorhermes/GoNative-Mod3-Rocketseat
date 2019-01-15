@@ -1,13 +1,14 @@
 const initialState = [
-    "Estudar GoNative",
-    "Fazer café",
-    "Ir ali fazer um cafézinho"
+    { id: 0, text: "GoNative" },
+    { id: 1, text: "Fazer cofézin" }
 ];
 
 export default function todos(state = initialState, action) {
     switch (action.type) {
         case "ADD_TODO":
-            return [...state, action.text];
+            return [...state, { id: Math.random(), text: action.payload.text }];
+        case "REMOVE_TODO":
+            return state.filter(todo => todo.id !== action.payload.id);
         default:
             return state;
     }
