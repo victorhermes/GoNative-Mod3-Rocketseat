@@ -10,9 +10,6 @@ export default class App extends Component {
         return (
             <Provider store={store}>
                 <Routes />
-                <View>
-                    <Text>New</Text>
-                </View>
             </Provider>
         );
     }
